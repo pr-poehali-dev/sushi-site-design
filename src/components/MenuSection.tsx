@@ -36,11 +36,11 @@ const MenuSection = ({ menuItems, onAddToCart }: MenuSectionProps) => {
         </div>
 
         <Tabs defaultValue="all" className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-4 mb-12 bg-muted h-14">
-            <TabsTrigger value="all" className="text-base">Все</TabsTrigger>
-            <TabsTrigger value="Роллы" className="text-base">Роллы</TabsTrigger>
-            <TabsTrigger value="Суши" className="text-base">Суши</TabsTrigger>
-            <TabsTrigger value="Наборы" className="text-base">Наборы</TabsTrigger>
+          <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-4 mb-12 bg-black/40 h-14 border border-primary/20">
+            <TabsTrigger value="all" className="text-base data-[state=active]:bg-primary data-[state=active]:text-black">Все</TabsTrigger>
+            <TabsTrigger value="Премиум роллы" className="text-base data-[state=active]:bg-primary data-[state=active]:text-black">Роллы</TabsTrigger>
+            <TabsTrigger value="Нигири" className="text-base data-[state=active]:bg-primary data-[state=active]:text-black">Нигири</TabsTrigger>
+            <TabsTrigger value="Сеты" className="text-base data-[state=active]:bg-primary data-[state=active]:text-black">Сеты</TabsTrigger>
           </TabsList>
 
           <TabsContent value="all" className="mt-0">
@@ -48,7 +48,7 @@ const MenuSection = ({ menuItems, onAddToCart }: MenuSectionProps) => {
               {menuItems.map((item) => (
                 <Card 
                   key={item.id} 
-                  className="group overflow-hidden border-border bg-card hover:border-primary transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20"
+                  className="group overflow-hidden border border-primary/20 bg-black/60 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:shadow-primary/30 backdrop-blur-sm"
                 >
                   <div className="relative overflow-hidden aspect-video">
                     <img 
@@ -57,7 +57,7 @@ const MenuSection = ({ menuItems, onAddToCart }: MenuSectionProps) => {
                       className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
                     />
                     {item.popular && (
-                      <Badge className="absolute top-4 right-4 bg-secondary text-secondary-foreground font-semibold">
+                      <Badge className="absolute top-4 right-4 bg-primary text-black font-bold shadow-lg">
                         <Icon name="TrendingUp" size={14} className="mr-1" />
                         Популярное
                       </Badge>
@@ -73,7 +73,7 @@ const MenuSection = ({ menuItems, onAddToCart }: MenuSectionProps) => {
                           {item.category}
                         </Badge>
                       </div>
-                      <div className="text-2xl font-bold text-primary font-['Montserrat']">
+                      <div className="text-3xl font-black text-primary font-['Montserrat'] drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
                         {item.price}₽
                       </div>
                     </div>
@@ -93,13 +93,13 @@ const MenuSection = ({ menuItems, onAddToCart }: MenuSectionProps) => {
             </div>
           </TabsContent>
 
-          {['Роллы', 'Суши', 'Наборы'].map((category) => (
+          {['Премиум роллы', 'Нигири', 'Сеты'].map((category) => (
             <TabsContent key={category} value={category} className="mt-0">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {menuItems.filter(item => item.category === category).map((item) => (
                   <Card 
                     key={item.id} 
-                    className="group overflow-hidden border-border bg-card hover:border-primary transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20"
+                    className="group overflow-hidden border border-primary/20 bg-black/60 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:shadow-primary/30 backdrop-blur-sm"
                   >
                     <div className="relative overflow-hidden aspect-video">
                       <img 
@@ -108,7 +108,7 @@ const MenuSection = ({ menuItems, onAddToCart }: MenuSectionProps) => {
                         className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
                       />
                       {item.popular && (
-                        <Badge className="absolute top-4 right-4 bg-secondary text-secondary-foreground font-semibold">
+                        <Badge className="absolute top-4 right-4 bg-primary text-black font-bold shadow-lg">
                           <Icon name="TrendingUp" size={14} className="mr-1" />
                           Популярное
                         </Badge>
@@ -124,7 +124,7 @@ const MenuSection = ({ menuItems, onAddToCart }: MenuSectionProps) => {
                             {item.category}
                           </Badge>
                         </div>
-                        <div className="text-2xl font-bold text-primary font-['Montserrat']">
+                        <div className="text-3xl font-black text-primary font-['Montserrat'] drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">
                           {item.price}₽
                         </div>
                       </div>

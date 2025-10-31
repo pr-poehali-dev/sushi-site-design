@@ -8,26 +8,27 @@ interface HeroSectionProps {
 
 const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/20"></div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-background to-black"></div>
       <div className="absolute inset-0" style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1553621042-f6e147245754?w=1920&h=1080&fit=crop)',
+        backgroundImage: 'url(https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=1920&h=1080&fit=crop&q=80)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        opacity: 0.15
+        opacity: 0.3
       }}></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
-          <Badge className="mb-6 text-lg px-6 py-2 bg-secondary text-secondary-foreground">
-            Доставка за 30 минут
+          <Badge className="mb-8 text-base md:text-lg px-6 py-2.5 bg-primary text-primary-foreground border-2 border-primary shadow-[0_0_20px_rgba(251,191,36,0.3)]">
+            ⚡ Доставка за 30 минут
           </Badge>
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 text-foreground font-['Montserrat']">
-            Свежие суши<br />
-            <span className="text-primary">прямо к вам</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight font-['Montserrat']">
+            <span className="text-white">Премиальные суши</span><br />
+            <span className="text-primary drop-shadow-[0_0_30px_rgba(251,191,36,0.5)]">высшего качества</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Аутентичная японская кухня с быстрой доставкой. Готовим из свежайших ингредиентов каждый день.
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Аутентичная японская кухня от шеф-повара из Токио. Свежайшие морепродукты, доставленные утром.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 

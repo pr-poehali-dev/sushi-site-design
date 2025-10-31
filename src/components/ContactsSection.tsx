@@ -4,7 +4,7 @@ import Icon from '@/components/ui/icon';
 
 const ContactsSection = () => {
   return (
-    <section id="contacts" className="py-24">
+    <section id="contacts" className="py-24 bg-gradient-to-b from-black/40 to-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
@@ -17,9 +17,9 @@ const ContactsSection = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="border-border bg-card p-8">
+            <Card className="border border-primary/20 bg-black/50 p-8 backdrop-blur-sm">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary/30 rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(251,191,36,0.3)]">
                   <Icon name="Phone" size={24} className="text-primary" />
                 </div>
                 <div>
@@ -32,8 +32,8 @@ const ContactsSection = () => {
               </div>
 
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Icon name="Mail" size={24} className="text-secondary" />
+                <div className="w-12 h-12 bg-primary/30 rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(251,191,36,0.3)]">
+                  <Icon name="Mail" size={24} className="text-primary" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2 text-foreground font-['Montserrat']">Email</h3>
@@ -45,7 +45,7 @@ const ContactsSection = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary/30 rounded-full flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(251,191,36,0.3)]">
                   <Icon name="MapPin" size={24} className="text-primary" />
                 </div>
                 <div>
@@ -58,45 +58,45 @@ const ContactsSection = () => {
               </div>
             </Card>
 
-            <Card className="border-border bg-card p-8">
+            <Card className="border border-primary/20 bg-black/50 p-8 backdrop-blur-sm">
               <h3 className="text-2xl font-bold mb-6 text-foreground font-['Montserrat']">Мы в соцсетях</h3>
               <div className="space-y-4">
                 <a 
                   href="#" 
-                  className="flex items-center gap-4 p-4 rounded-lg bg-muted hover:bg-primary/20 transition-colors group"
+                  className="flex items-center gap-4 p-4 rounded-lg bg-black/40 hover:bg-primary/20 transition-colors group border border-primary/10 hover:border-primary/30"
                 >
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/40 shadow-[0_0_10px_rgba(251,191,36,0.2)] group-hover:shadow-[0_0_20px_rgba(251,191,36,0.4)]">
                     <Icon name="Instagram" size={24} className="text-primary" />
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">Instagram</div>
-                    <div className="text-sm text-muted-foreground">@yokosushi</div>
+                    <div className="text-sm text-gray-400">@yokosushi</div>
                   </div>
                 </a>
 
                 <a 
                   href="#" 
-                  className="flex items-center gap-4 p-4 rounded-lg bg-muted hover:bg-primary/20 transition-colors group"
+                  className="flex items-center gap-4 p-4 rounded-lg bg-black/40 hover:bg-primary/20 transition-colors group border border-primary/10 hover:border-primary/30"
                 >
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/40 shadow-[0_0_10px_rgba(251,191,36,0.2)] group-hover:shadow-[0_0_20px_rgba(251,191,36,0.4)]">
                     <Icon name="Send" size={24} className="text-primary" />
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">Telegram</div>
-                    <div className="text-sm text-muted-foreground">@yokosushi_bot</div>
+                    <div className="text-sm text-gray-400">@yokosushi_bot</div>
                   </div>
                 </a>
 
                 <a 
                   href="#" 
-                  className="flex items-center gap-4 p-4 rounded-lg bg-muted hover:bg-primary/20 transition-colors group"
+                  className="flex items-center gap-4 p-4 rounded-lg bg-black/40 hover:bg-primary/20 transition-colors group border border-primary/10 hover:border-primary/30"
                 >
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/40 shadow-[0_0_10px_rgba(251,191,36,0.2)] group-hover:shadow-[0_0_20px_rgba(251,191,36,0.4)]">
                     <Icon name="MessageCircle" size={24} className="text-primary" />
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">WhatsApp</div>
-                    <div className="text-sm text-muted-foreground">+7 (999) 123-45-67</div>
+                    <div className="text-sm text-gray-400">+7 (999) 123-45-67</div>
                   </div>
                 </a>
               </div>
