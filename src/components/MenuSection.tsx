@@ -16,9 +16,10 @@ export interface MenuItem {
 
 interface MenuSectionProps {
   menuItems: MenuItem[];
+  onAddToCart: (item: MenuItem) => void;
 }
 
-const MenuSection = ({ menuItems }: MenuSectionProps) => {
+const MenuSection = ({ menuItems, onAddToCart }: MenuSectionProps) => {
   return (
     <section id="menu" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -79,7 +80,10 @@ const MenuSection = ({ menuItems }: MenuSectionProps) => {
                     <p className="text-muted-foreground mb-4 text-sm">
                       {item.description}
                     </p>
-                    <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">
+                    <Button 
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
+                      onClick={() => onAddToCart(item)}
+                    >
                       <Icon name="Plus" className="mr-2" size={18} />
                       В корзину
                     </Button>
@@ -127,7 +131,10 @@ const MenuSection = ({ menuItems }: MenuSectionProps) => {
                       <p className="text-muted-foreground mb-4 text-sm">
                         {item.description}
                       </p>
-                      <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">
+                      <Button 
+                        className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
+                        onClick={() => onAddToCart(item)}
+                      >
                         <Icon name="Plus" className="mr-2" size={18} />
                         В корзину
                       </Button>

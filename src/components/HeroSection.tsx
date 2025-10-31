@@ -11,7 +11,7 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
     <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/20"></div>
       <div className="absolute inset-0" style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=1920&h=1080&fit=crop)',
+        backgroundImage: 'url(https://images.unsplash.com/photo-1553621042-f6e147245754?w=1920&h=1080&fit=crop)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         opacity: 0.15
