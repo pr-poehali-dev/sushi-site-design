@@ -9,12 +9,14 @@ import ContactsSection from '@/components/ContactsSection';
 import Footer from '@/components/Footer';
 import Cart, { CartItem } from '@/components/Cart';
 import MobileMenu from '@/components/MobileMenu';
+import OrderForm from '@/components/OrderForm';
 import type { MenuItem } from '@/components/MenuSection';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOrderFormOpen, setIsOrderFormOpen] = useState(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const scrollToSection = (section: string) => {
@@ -53,6 +55,16 @@ const Index = () => {
   };
 
   const cartItemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const cartTotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  const handleCheckout = () => {
+    setIsCartOpen(false);
+    setIsOrderFormOpen(true);
+  };
+
+  const handleOrderSubmit = () => {
+    setCartItems([]);
+  };
 
   const menuItems = [
     {
@@ -147,6 +159,15 @@ const Index = () => {
         items={cartItems}
         onUpdateQuantity={handleUpdateQuantity}
         onRemoveItem={handleRemoveItem}
+        onCheckout={handleCheckout}
+      />
+
+      <OrderForm
+        isOpen={isOrderFormOpen}
+        onClose={() => setIsOrderFormOpen(false)}
+        total={cartTotal}
+        itemCount={cartItemCount}
+        onOrderSubmit={handleOrderSubmit}
       />
       
       <main className="pt-20">
